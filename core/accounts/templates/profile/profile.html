@@ -25,11 +25,12 @@
                     </div>
                     <div class="job_content">
                         <ul>
-                            <li>Name: <span>{{profile}}</span></li>
+                            <li>Name: <span>{{profile.user.username}}</span></li>
                             <li>Email: <span>{{profile.user.email}}</span></li>
-                            <li>Phone: <span>{{profile.phone_number}}</span></li>
+                            <li>Phone: <span>{{profile.phone}}</span></li>
+                            <li>Address: <span>{{profile.address}}</span></li>
                             <li>Address: <span>{{profile.city}}</span></li>
-
+                            <li>Address: <span>{{profile.state}}</span></li>
                         </ul>
                         
                     </div>
