@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView , DetailView
 from .models import Counslat ,Comment
 from .filters import FliterCounslat
-from .froms import Reviews
+from .froms import Reviews , Counslating
 # Create your views here.
 '''
 [comments]
@@ -29,3 +29,12 @@ def consulatdetail(request,id):
             my_form.save()
     context = {'consulat':consulat,'review':review,'form':form}
     return render(request,'consulat/detail.html',context)
+
+
+def add_counslating(request):
+    form = Counslating()
+    if request.method == 'POST':
+        my_form = form.save(commit=False)
+        my_form.user = request.user
+        my_form.save()
+    return render(request,'consulat/add_counslat.html',{'form':form})
