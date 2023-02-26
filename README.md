@@ -14,6 +14,6 @@ Consulting business website It contains Consulting side for ask for it for busin
   * the advisors can add post to sha experience 
  ## ask for Consulting 
   * add new Consulting for defulat user and view the Consulting
-  * the only one who can replay for Consulting is the advisors
+  * add comments and reply for Consulting
  # thank you for visiting 
  my name is fai mubarak and im django devloper 
