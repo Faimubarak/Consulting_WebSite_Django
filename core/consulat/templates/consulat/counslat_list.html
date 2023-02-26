@@ -10,10 +10,10 @@
                 <div class="col-lg-8">
                     <div class="row g-5">
                         {% for obj in object_list%}
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s" height="50%" width="50%" >
                             <div class="blog-item bg-light rounded overflow-hidden">
                                 <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="{% static 'img/blog-1.jpg' %}" alt="">
+                                    <img alt="" border="0" height="70%" width="70%" src="https://tinypic.host/images/2023/02/21/pikrepo.com-2.jpg"/> 
                                     <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
                                 </div>
                                 <div class="p-4">
@@ -43,7 +43,7 @@
                         <div class="link-animated d-flex flex-column justify-content-start">
                             <form method="GET">
                                 {% bootstrap_form filter.form %}
-                                <input type="submit" value="Search" class="btn btn-primary">
+                                <input type="submit" value="Search" class="boxed-btn3 w-100 mt-2">
                         </div>
                     </div>
                     <!-- Category End -->
