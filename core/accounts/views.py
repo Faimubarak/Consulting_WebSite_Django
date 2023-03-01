@@ -5,8 +5,8 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-# Create your views here.
 
+#View for user sgin up to check the user information
 def signup(request):
     if request.method == 'POST':
         signup_form = UserCreateForm(request.POST)
@@ -25,13 +25,13 @@ def signup(request):
     return render(request,'registration/signup.html',{'signup_form':signup_form})
 
 
-
+#Get the user profile for user who log in on page
 def profile(request):
     profile = Profile.objects.get(user = request.user)
     return render(request,'profile/profile.html',{'profile':profile})
 
 
-
+#Edit the proflie and user information
 def profile_edit(request):
     profile = Profile.objects.get(user = request.user)
     if request.method == 'POST':
