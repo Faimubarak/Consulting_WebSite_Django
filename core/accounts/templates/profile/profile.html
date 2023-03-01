@@ -1,50 +1,115 @@
 {% extends "base.html" %}
 {% load static %}
 {% block 'body' %}
-<div class="hero-wrap js-fullheight" >
-	<div class="overlay"></div>
-	<div class="container">
-		<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
-			data-scrollax-parent="true">
-			<div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-				<p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
-						class="mr-2"><a href="index.html">Home</a></span> <span>Hotel</span></p>
-				<h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
-			</div>
-		</div>
-	</div>
-</div>
 
-<div class="job_details_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="job_sumary">
-                    <div class="summery_header">
-                        <h3>Profile Summery</h3>
-                    </div>
-                    <div class="job_content">
-                        <ul>
-                            <li>Name: <span>{{profile.user.username}}</span></li>
-                            <li>Email: <span>{{profile.user.email}}</span></li>
-                            <li>Phone: <span>{{profile.phone}}</span></li>
-                            <li>Address: <span>{{profile.address}}</span></li>
-                            <li>Address: <span>{{profile.city}}</span></li>
-                            <li>Address: <span>{{profile.state}}</span></li>
-                        </ul>
-                        
-                    </div>
-                    <div class="p-5">
-                        <h5><a href="{% url 'accounts:profile_edit' %}">Edit Profile</a></h5>
-                        <h5><a href="{% url 'password_change' %}">Change Password</a></h5>
-                        <h5><a href="">logout</a></h5>
-                    </div>
+<div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center" style=" top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0;
+            background: rgba(9, 30, 62, .7);
+            z-index: 1;">
+                <div class="p-3" style="max-width: 900px;">
+                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                    <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center" style=" top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0;
+            background: rgba(9, 30, 62, .7);
+            z-index: 1;">
+                <div class="p-3" style="max-width: 900px;">
+                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                    <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;.gradient-custom {
+                    /* fallback for old browsers */
+                    background: #f6d365;
+                    
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+                    
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+                    }">
+                {% if profile.image %}
+                <img src="{{profile.image.url}}"alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+                {% else %}
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                {% endif %}
+                <h5>{{profile}}</h5>
+                <i class="far fa-edit mb-5"></i>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6>Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p class="text-muted">{{profile.user.email}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Phone</h6>
+                      <p class="text-muted">{{profile.phone}}</p>
+                    </div>
+                  </div>
+                  <h6>more info</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>address</h6>
+                      <p class="text-muted">{{profile.address}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>state</h6>
+                      <p class="text-muted">{{profile.state}}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <a href="{% url 'accounts:profile_edit' %}" type="button" class="btn btn-primary py-md-2 px-md-5 me-2 animated slideInLeft">edit proflie</a>
+                      <a  href="{% url 'logout' %}"  type="button" class="btn btn-outline-dark py-md-2 px-md-4 animated slideInRight">log out</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 {% endblock %}

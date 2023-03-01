@@ -37,13 +37,11 @@ def profile_edit(request):
     if request.method == 'POST':
         profile_form = ProfileForm(request.POST , request.FILES , instance=profile)
         if profile_form.is_valid():
-            user_form.save()
             my_form = profile_form.save(commit=False)
             my_form.user = request.user
             my_form.save()
             messages.success(request, 'Profile details updated.')
             return redirect(reverse('accounts:profile'))
-    
     else:
         profile_form = ProfileForm(instance = profile)       
 

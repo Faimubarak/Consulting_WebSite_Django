@@ -1,121 +1,81 @@
 {% extends "base.html" %}
+{% load static %}
 {% block 'body' %}
     
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
 
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Blog</li>
-        </ol>
-        <h2>Blog</h2>
+<div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center" style=" top: 0px;
+          left: 0px;
+          right: 0px;
+          bottom: 0;
+          background: rgba(9, 30, 62, .7);
+          z-index: 1;">
+              <div class="p-3" style="max-width: 900px;">
+                  <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                  <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
 
+              </div>
+          </div>
       </div>
-    </section><!-- End Breadcrumbs -->
+      <div class="carousel-item">
+          <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center" style=" top: 0px;
+          left: 0px;
+          right: 0px;
+          bottom: 0;
+          background: rgba(9, 30, 62, .7);
+          z-index: 1;">
+              <div class="p-3" style="max-width: 900px;">
+                  <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                  <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-
-          <div class="col-lg-8 entries">
-
-            {% for art in obj %}
-            <article class="entry">
-
-                <div class="entry-img">
-                  <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-                </div>
-  
-                <h2 class="entry-title">
-                  <a href="blog-single.html">{{title}}</a>
-                </h2>
-  
-                <div class="entry-meta">
-                  <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">{{obj.user}}</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{obj.created_at}}</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">{{obj.catgory}}</a></li>
-                  </ul>
-                </div>
-  
-  
-              </article><!-- End blog entry -->
-            {% endfor %}
-
-
-
-          </div><!-- End blog entries list -->
-
-          <div class="col-lg-4">
-
-            <div class="sidebar">
-
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
-
-                <p>add post</p>
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
-
-              <h3 class="sidebar-title">Categories</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-              </div><!-- End sidebar categories-->
-
-              <h3 class="sidebar-title">Recent Posts</h3>
-              <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-1.jpg" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-2.jpg" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-3.jpg" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-4.jpg" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
-
-            </div><!-- End sidebar -->
-
-          </div><!-- End blog sidebar -->
-
-        </div>
-
+              </div>
+          </div>
       </div>
-    </section><!-- End Blog Section -->
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container py-5">
+      <div class="row g-5">
+          <!-- Blog list Start -->
+          <div class="col-lg-8">
+              <div class="row g-5">
+                {% for obj in obj %}
+                <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s" height="50%" width="50%" >
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title">{{obj}}</h5>
+                          <p class="card-text">{{obj.content|safe}}</p>
+                         <a href="{% url 'blog:detail' obj.id %}" class="btn btn-outline-danger btn-sm">Read More</a>
+                        </div>
+                       </div>
+                      </div>
+                </div>
+                {% endfor %}
+
+
+              </div>
+          </div>
+          <!-- Blog list End -->
+      </div>
+  </div>
+</div>
 
 {% endblock 'body' %}
